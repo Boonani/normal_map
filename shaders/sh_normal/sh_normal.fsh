@@ -37,9 +37,9 @@ void main()
 	vec4 specular_map = texture2D(specular, normal_uv);
 	
 	_diffuse += specular_map.rgb;
-
-
-
-
-    gl_FragColor =  vec4(_diffuse * light.a, light.a);//   vec4(normal_depth,normal_depth , normal_depth , 1.0); // 
+	
+	
+	
+	gl_FragColor =  vec4(_diffuse * light.a, light.a);//   vec4(normal_depth,normal_depth , normal_depth , 1.0); // 
+	
 }

@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "s_light",
-    "path": "sprites/s_light/s_light.yy",
+    "name": "s_light_hard",
+    "path": "sprites/s_light_hard/s_light_hard.yy",
   },
   "solid": false,
   "visible": true,
