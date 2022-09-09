@@ -12,6 +12,8 @@ function normal_layer_begin()
 		surface_set_target(global.norm_surface);
         camera_apply(view_camera[0]);
         shader_set(sh_rotate);
+		
+		
     }
 
 }

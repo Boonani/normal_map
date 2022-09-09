@@ -33,13 +33,19 @@ void main()
     float d = max(dot(normal, lightDir), 0.0);
     vec3 _diffuse = d * v_vColour.rgb * light.r * v_vColour.a * occl;
 	
-	
 	vec4 specular_map = texture2D(specular, normal_uv);
 	
 	_diffuse += specular_map.rgb;
 	
+
+	vec4 color = vec4( vec3(_diffuse * light.a),   1.);
 	
+	float color_compare = color.r +color.g +color.b ; // iif this adds to less than 0 then get out
 	
-	gl_FragColor =  vec4(_diffuse * light.a, light.a);//   vec4(normal_depth,normal_depth , normal_depth , 1.0); // 
+	color.a *= 1.0 - step(color_compare, 0.0 );
 	
+	color.rgb = v_vColour.rgb;
+	color.a *= light.a;
+	
+	gl_FragColor = color;//   vec4(normal_depth,normal_depth , normal_depth , 1.0); //
 }
